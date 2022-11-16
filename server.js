@@ -11,6 +11,6 @@ app.use(routes);
 
 db.once('open', () => {
     app.listen(PORT, () => {
-        console.log(`App listening at localhost:3001/${PORT}`);
+        console.log(`App listening at localhost:${PORT}`);
     });
 });

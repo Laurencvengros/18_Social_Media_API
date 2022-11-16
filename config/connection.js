@@ -10,6 +10,4 @@ connect(connectionString, {
   useUnifiedTopology: true,
 });
 
-mongoose.set('debug', true);
-
 module.exports = connection;
