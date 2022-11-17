@@ -38,7 +38,6 @@ module.exports = {
     deleteUser(req, res) {
         User.findOneAndRemove(
             { _id: req.params.id },
-            
             {runValidators: true, returnOriginal: false}
         )
         .then((userData) =>
