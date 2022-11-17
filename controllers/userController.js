@@ -52,7 +52,7 @@ module.exports = {
     },
     addNewFriend(req,res){
         User.findOneAndUpdate(
-            {id: req.params.id},
+            {_id: req.params.id},
             {$push: {friend: req.params.friendId}},
             {new: true}
         )
@@ -65,6 +65,21 @@ module.exports = {
         )
         .catch((err) => res.status(500).json(err));
     },
+    deleteFriend(req,res){
+        User.findOneAndUpdate(
+            {_id: req.params.id},
+            {$pull: {friend: req.params.friendId}},
+            {new: true}
+        )
+        .populate({path: 'friend', select: '-__v'})
+        .select('-__v')
+        .then((userData) =>
+          !userData
+            ? res.status(404).json({message: 'no user with that id!'})
+            :res.json(userData)
+        )
+        .catch((err) => res.status(500).json(err));
+    }
 
 };
 
