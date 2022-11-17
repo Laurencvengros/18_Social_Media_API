@@ -13,11 +13,12 @@ module.exports = {
             User.findOneAndUpdate(
                 {_id: req.params._id},
                 {$addToSet: {thought: req.body}},
-                { runValidators: true, new: true }
+                { runValidators: true, new: true },
+                console.log(thoughtData)
             )
             .then((thoughtData) =>
             !thoughtData
-                ? res.status(404).json({ message: 'No Userfound with that ID :(' })
+                ? res.status(404).json({ message: 'No User found with that ID :(' })
                 : res.json(thoughtData)
             )
             .catch(err => res.json(err));
@@ -25,4 +26,31 @@ module.exports = {
         .catch(err => res.status(400).json(err));
        
     },
-}
+
+    getThoughtByID(req,res){
+        Thought.findOne({_id: req.params.id})
+        .populate({path: 'reaction',select: '-__v'})
+        .select('-__v')
+        .then((thoughtData) =>
+            !thoughtData    
+                ? res.status(404).json({message: 'no thought with that ID!'})
+                : res.json(thoughtData)
+        )
+        .catch((err) => res.status(500).json(err));
+
+    },
+    updateThought(req,res){
+        Thought.findOneAndUpdate(
+            {_id: req.params.id},
+            { $set: req.body},
+            {runValidators: true, new:true}
+        )
+        .then((thoughtData) =>
+            !thoughtData
+                ? res.status(404).json({message: 'no thought to update!'})
+                : res.json(thoughtData)
+        )
+        .catch((err) => res.status(500).json(err));
+
+    }
+};
