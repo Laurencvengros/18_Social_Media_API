@@ -44,6 +44,7 @@ module.exports = {
             !userData 
             ? res.status(404).json({message: 'no user with that ID'})
             : res.json(userData)
+            
         )
         .catch((err) => res.status(500).json(err));
 
