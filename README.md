@@ -71,8 +71,9 @@ Here Is a guide to run the application on your own local computer
 ``` /api/users/: userId ```
 
 * POST a new user
-``` /api/users
+``` /api/users```
 
+```
 json
 {
   "username": "example",
