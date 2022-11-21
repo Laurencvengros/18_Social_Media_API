@@ -3,6 +3,8 @@ const {User, Thought} = require('../models');
 module.exports = {
     getUsers(req, res) {
         User.find({})
+        .populate({path: 'friend', select: '-__v'})
+        .populate({path: 'thought', select: '-__v'})
           .then(users => res.json(users))
           .catch((err) => res.status(500).json(err));
       },
@@ -13,8 +15,9 @@ module.exports = {
     },
     getUserByID(req,res){
         User.findOne({_id:req.params.id})
-        .populate({path: 'thought', select: '-__v'})
-        .populate({path: 'friend', select: '-__v'})
+        .select("-__v")
+        .populate("friend")
+        .populate("thought")
         .then((userData) =>
             !userData
               ? res.status(404).json({message: 'no user with that ID'})
@@ -40,13 +43,19 @@ module.exports = {
             { _id: req.params.id },
             {runValidators: true, returnOriginal: false}
         )
-        .then((userData) =>
-            !userData 
-            ? res.status(404).json({message: 'no user with that ID'})
-            : res.json(userData)
-            
-        )
-        .catch((err) => res.status(500).json(err));
+        .then((userData) => {
+            if (!userData) {
+                return res.status(404).json({ message: "No user with this id!" });
+        }
+        return Thought.deleteMany({ _id: { $in: userData.thought } });
+    })
+    .then(() => {
+      res.json({ message: "User and associated thoughts deleted!" });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 
     },
     addNewFriend(req,res){

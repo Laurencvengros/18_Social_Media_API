@@ -146,9 +146,9 @@ Note to see a demonstration of all the routes in insomnia check out the applicat
 
 ## Application Demo
 
-[User Routes](./assets/Videos/USER%20Routes%3B%20GET%20all%2C%20GET%20by%20ID%2C%20POST%2C%20PUT%2C%20DELETE.webm  )
+[User Routes](./assets/Videos/USER%20ROUTES_%20GET%20all%2C%20GET%20by%20ID%2C%20POST%2C%20PUT%2CDELETE.webm )
 
-[Thought Routes](./assets/Videos/THOUGHT%20Routes_%20GET%20all%2C%20GET%20by%20ID%2C%20POST%20PUT%20DELETE.webm)
+[Thought Routes](./assets/Videos/THOUGHT%20ROUTES_%20GET%20all%2C%20GET%20by%20ID%2C%20POST%2C%20PUT%2C%20DELETE%20(and%20associated%20thought%20delete).webm
 
 [Friend Routes](./assets/Videos/POST%20and%20DELETE%20friend.webm)
 

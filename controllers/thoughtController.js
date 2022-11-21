@@ -1,5 +1,6 @@
 const {Thought, User} = require('../models');
 
+
 module.exports = {
     getThoughts(req,res){
         Thought.find({})
@@ -10,10 +11,10 @@ module.exports = {
     addThought(req, res) {
         Thought.create(req.body)
         .then(thoughtData =>{
-            User.findOneAndUpdate(
-                {_id: req.params._id},
-                {$addToSet: {thought: req.body}},
-                { runValidators: true, new: true },
+          return  User.findOneAndUpdate(
+                {_id: req.body.id},
+                { $push: { thought: thoughtData._id } },
+                {new: true },
                 console.log(thoughtData)
             )
             .then((thoughtData) =>
