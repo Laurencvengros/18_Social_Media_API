@@ -60,9 +60,9 @@ Here Is a guide to run the application on your own local computer
 
 ## Usage
 
-* This application utilizes all the CRUD functionality to GET/POST/PUT and DELETE data for users, thoughts, friends and reactions. Below demonstartes in detail the functionality the API has.
+* This application utilizes all API the CRUD functionality to GET/POST/PUT and DELETE data for users, thoughts, friends and reactions. Below demonstartes in detail the functionality the API has.
 
-1. USER API ROUTES
+1. ### USER API ROUTES
 
     * GET all users ``` /api/users ```
 
@@ -90,7 +90,7 @@ Here Is a guide to run the application on your own local computer
     * DELETE a user ```/api/users/:user:id```
 
 
-2. THOUGHT API ROUTES
+2. ### THOUGHT API ROUTES
 
     * GET all thoughts ```/api/thoughts```
 
@@ -121,7 +121,7 @@ Here Is a guide to run the application on your own local computer
     * DELETE a thought  ```api/thoughts/thoughtId```
 
 
-3. FRIEND API ROUTES
+3. ### FRIEND API ROUTES
 
     ```/api/users/:userId/friends/:friendId```
 
@@ -131,7 +131,7 @@ Here Is a guide to run the application on your own local computer
 
 
 
-4. REACTION API ROUTES
+4. ### REACTION API ROUTES
 
     ```/api/thoughts/:thoughtId/reactions```
 
