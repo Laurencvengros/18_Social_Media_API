@@ -64,82 +64,80 @@ Here Is a guide to run the application on your own local computer
 
 1. USER API ROUTES
 
-* GET all users
-``` /api/users ```
+    * GET all users ``` /api/users ```
 
-* GET user by id 
-``` /api/users/: userId ```
+    * GET user by id ``` /api/users/: userId ```
 
-* POST a new user
-``` /api/users```
+    * POST a new user ``` /api/users```
 
-```
-json
-{
-  "username": "example",
-  "email": "exampleemail@gmail.com"
-}
-```
-* PUT to update a users information
-``` /api/users/:userId
+        ```
+            json
+            {
+            "username": "example",
+            "email": "exampleemail@gmail.com"
+            }
+        ```
+    * PUT to update a users information ``` /api/users/:userId```
 
-json
-{
-  "username": "Updatedexample",
-  "email": "updatedEmail@gmail.com"
-}
-```
+        ```
+            json
+            {
+            "username": "Updatedexample",
+            "email": "updatedEmail@gmail.com"
+            }
+        ```
 
-* DELETE a user
-```/api/users/:user:id```
+    * DELETE a user ```/api/users/:user:id```
+
 
 2. THOUGHT API ROUTES
 
-* GET all thoughts
-```/api/thoughts```
+    * GET all thoughts ```/api/thoughts```
 
-* GET thought by ID
-```/api/thoughts/:thoughtId```
+    * GET thought by ID ```/api/thoughts/:thoughtId```
 
-* POST a new thought
-```/api/thoughts
+    * POST a new thought ```/api/thoughts```
 
-json
-{
-  "thoughtText": "example thought",
-  "username": "example user",
-  "userId": "5edff358a0fcb779aa7b118b"
-}
-```
+        ```
+            json
+            {
+            "thoughtText": "example thought",
+            "username": "example user",
+            "userId": "5edff358a0fcb779aa7b118b"
+            }
+        ```
 
-* PUT to update a thought
-``` /api/thoughts/thoughtId
+    * PUT to update a thought ``` /api/thoughts/thoughtId```
 
-json
-{
-  "thoughtText": "example thought UPDATED",
-  "username": "example user",
-  "userId": "5edff358a0fcb779aa7b118b"
-}
-```
+        ```
+            json
+            {
+            "thoughtText": "example thought UPDATED",
+            "username": "example user",
+            "userId": "5edff358a0fcb779aa7b118b"
+            }
+        ```
 
-* DELETE a thought 
-```api/thoughts/thoughtId```
+    * DELETE a thought  ```api/thoughts/thoughtId```
+
 
 3. FRIEND API ROUTES
 
-```/api/users/:userId/friends/:friendId```
+    ```/api/users/:userId/friends/:friendId```
 
-* POST to add a new friend from friend list
+    * ```POST``` to add a new friend from friend list
 
-* DELETE to delete a friend from friend list
+    * ```DELETE``` to delete a friend from friend list
+
+
 
 4. REACTION API ROUTES
-```/api/thoughts/:thoughtId/reactions```
 
-* POST to add a reaction to a thought
+    ```/api/thoughts/:thoughtId/reactions```
 
-* DELETE to delete a reaction from a thought
+    * ```POST``` to add a reaction to a thought
+
+    * ```DELETE``` to delete a reaction from a thought
 
 ```
 Note to see a demonstration of all the routes in insomnia check out the application demo section below.
