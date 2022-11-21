@@ -89,6 +89,9 @@ Here Is a guide to run the application on your own local computer
 
     * DELETE a user ```/api/users/:user:id```
 
+### BONUS: deleting a user deletes their associated thoughts 
+ ```See thought routes video demo)```
+
 
 2. ### THOUGHT API ROUTES
 
