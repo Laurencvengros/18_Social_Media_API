@@ -14,8 +14,6 @@
 
 6. [Technologies](#technologies)
 
-7. [Links](#links)
-
 8. [Contact Me](#contact-me)
 
 
@@ -156,5 +154,17 @@ Note to see a demonstration of all the routes in insomnia check out the applicat
 [Friend Routes](./assets/Videos/POST%20and%20DELETE%20friend.webm)
 
 [Reaction Routes](./assets/Videos/POST%20and%20DELETE%20friend.webm)
+
+## Contact Me
+
+This Application was created by me.
+
+For questions/comments/concerns please contact me via the information below
+
+* Author: Lauren Cvengros
+* Email: L.Cvengros@icloud.com
+* github: Lauurencvengros -> https://github.com/Laurencvengros
+
+
 
     
